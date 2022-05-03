@@ -1,14 +1,17 @@
+import profile
 from fastapi import APIRouter
 from .monitor.timer import CustomMetrics
 import math
+import asyncio
 router = APIRouter()
 custom_metrics = CustomMetrics("predict_service")
 
 
+#@profile
 @router.get(path='/predict/x1/{x1}/x2/{x2}/x3/{x3}/x4/{x4}/is_verified_login/{is_verified_login}')
 def predict(x1: float, x2: float, x3: float, x4: float, is_verified_login: bool):
     with custom_metrics.model_latency_histogram.time():
-        return calc_fraud_score(x1, x2, x3, x4, is_verified_login)
+        return asyncio.run(calc_fraud_score(x1, x2, x3, x4, is_verified_login))
 
 
 async def calc_fraud_score(x_1, x_2, x_3, x_4, is_verified_login):

@@ -1,9 +1,14 @@
 import unittest
+import cProfile
 from app.routers.predictServer import predict
-import asyncio
 
 class TestPredict(unittest.TestCase):
 
     def test_predict(self):
-        print("Hiii")
-        assert asyncio.run(predict(1,1,1,1,True)) == 0.0
+        assert predict(1,1,1,1,True) == 0.0
+
+"""
+    def test_profiling(self):
+        cProfile.run('predict(1,1,1,1,True)', filename='predict_profile.out')
+"""
+

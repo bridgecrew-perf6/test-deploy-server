@@ -3,3 +3,4 @@ uvicorn
 uvicorn[standard]
 starlette_prometheus
 pytest
+prometheus_client
