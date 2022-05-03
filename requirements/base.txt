@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+uvicorn[standard]
+starlette_prometheus
+pytest
