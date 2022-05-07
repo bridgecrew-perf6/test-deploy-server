@@ -4,3 +4,5 @@ uvicorn[standard]
 starlette_prometheus
 pytest
 prometheus_client
+#pypi download in production
+/LoginPredict/dist/login_predict-0.1.2-py2.py3-none-any.whl
