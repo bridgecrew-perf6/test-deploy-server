@@ -7,3 +7,12 @@ Run
 
 
 
+TODO
+
+- Add Kubernetes Helm charts to deploy.
+
+
+Potential Improvements-
+
+- Upload predict function to a pickle and upload it to repository.
+- Deploy model to kubernetes using k8 wrapper/kServe
